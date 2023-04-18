@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+
+<body>
+
+    <script>
+        // Get the values of the username, password, and IP address fields from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        const password = urlParams.get('password');
+        const ipAddress = urlParams.get('ip_address');
+
+        // Check if the user is an admin or a user
+        if (username === 'User77' && password === '123456789') {
+            // Show the content of the user page
+            const userPageHeading = document.querySelector('#user-page-heading');
+            userPageHeading.style.display = 'block';
+        } else if (username === 'Admin77' && password === '1985127') {
+            // Show the content of the admin page
+            const adminPageHeading = document.querySelector('#admin-page-heading');
+            adminPageHeading.style.display = 'block';
+        } else {
+            // Redirect the user to the login page
+            alert('You do not have permissions to access this page');
+            window.location.href = 'LogIn.html';
+        }
+    </script>
+
+    <h1>Welcome, User!</h1>
+    <p>Here's the content of the user page.</p>
+</body>
+
+
+</html>
